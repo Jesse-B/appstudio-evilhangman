@@ -14,10 +14,6 @@ Class WordsModel
   - updateWord method, updates the wordview based on guesses
   - updateLetters method, updates the view showing the used letters
 
-#### Class SettingsViewController
-- setWordLength method, sets the length of the word to be guessed in NSUserDefaults
-- setGuessesAmount method, sets the amount of guesses the user has in NSUserDefaults
-
 #### Class GameViewController
 NewGame Button
 - Invokes startGame method to start a new game.
@@ -47,5 +43,7 @@ GuessesAmount Slider
 ![Sketch](https://raw.githubusercontent.com/Jesse-B/appstudio-evilhangman/master/doc/sketch.png "Sketch")
 
 ## API's and frameworks
+Standard Xcode API's and frameworks.
 
 ## Database tables and fields
+NSUserDefaults can be seen as a database for game settings.

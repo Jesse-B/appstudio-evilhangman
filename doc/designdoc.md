@@ -19,17 +19,28 @@ Class SettingsViewController
 - setGuessesAmount()
 
 ### View classes
-Class InputLetterView
+#### Views for GameViewController
+Class NewGameView (Button)
+- Invokes startGame() method to start a new game.
+
+Class InputLetterView (Button)
 - Shows a list of letters that can be tapped on for a guess. Used letters will be grayed out.
 
 Class HangmanDrawingView
 - Shows a drawing of hangman. At each wrong guess a new part will be drawn. When all guesses have been used, the drawing is complete.
 
-Class GuessView
+Class GuessView (Label)
 - Shows the amount of guesses left for the user.
 
-Class WordView
+Class WordView (Label)
 - Shows and underscore for each unguessed letter of the word. Shows the letters for correct guesses.
+
+#### Views for SettingsViewController
+Class WordLengthView (Slider)
+- Slider to set the length of the word to be guessed
+
+Class GuessesAmountView (Slider)
+- Slider to set the amount of guesses the user has
 
 ## Sketches
 ![Sketch](https://raw.githubusercontent.com/Jesse-B/appstudio-evilhangman/master/doc/sketch.png "Sketch")

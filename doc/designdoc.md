@@ -7,40 +7,41 @@ Class WordsModel
 - getPossibleWords method, loads words.plist and turns this into a list or dict of possible words that can be used by the game. Bases words on the length of the word set by user in settings.
 
 ### Controller classes
-Class GameViewController
+#### Class GameController
 - startGame method, returns setup for a new game
 - processGuess method, processes a guessed letter by the user and updates a word list
-- updateDrawing method, updates the drawing of hangman based on guesses
-- updateWord method, updates the wordview based on guesses
-- updateLetters method, updates the view showing the used letters
+  - updateDrawing method, updates the drawing of hangman based on guesses
+  - updateWord method, updates the wordview based on guesses
+  - updateLetters method, updates the view showing the used letters
 
-Class SettingsViewController
+#### Class SettingsViewController
 - setWordLength method, sets the length of the word to be guessed in NSUserDefaults
 - setGuessesAmount method, sets the amount of guesses the user has in NSUserDefaults
 
-### View classes
-#### Views for GameViewController
-Class NewGameView (Button)
+#### Class GameViewController
+NewGame Button
 - Invokes startGame method to start a new game.
 
-Class InputLetterView (Button)
+InputLetter Button
 - Shows a list of letters that can be tapped on for a guess. Used letters will be grayed out.
 
-Class HangmanDrawingView
+HangmanDrawing
 - Shows a drawing of hangman. At each wrong guess a new part will be drawn. When all guesses have been used, the drawing is complete.
 
-Class GuessView (Label)
+Guess Label
 - Shows the amount of guesses left for the user.
 
-Class WordView (Label)
+Word Label
 - Shows and underscore for each unguessed letter of the word. Shows the letters for correct guesses.
 
-#### Views for SettingsViewController
-Class WordLengthView (Slider)
+#### Class SettingsViewController
+WordLength Slider
 - Slider to set the length of the word to be guessed
+- setWordLength method, sets the length of the word to be guessed in NSUserDefaults
 
-Class GuessesAmountView (Slider)
+GuessesAmount Slider
 - Slider to set the amount of guesses the user has
+- setGuessesAmount method, sets the amount of guesses the user has in NSUserDefaults
 
 ## Sketches
 ![Sketch](https://raw.githubusercontent.com/Jesse-B/appstudio-evilhangman/master/doc/sketch.png "Sketch")

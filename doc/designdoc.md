@@ -4,36 +4,46 @@ Evil Hangman is a game where the user has to find a word by guessing letters lik
 ## Classes and public methods
 ### Model classes
 Class WordsModel
-- getPossibleWords(), returns a list of possible words that can be guessed by the user
+- getPossibleWords method, loads words.plist and turns this into a list or dict of possible words that can be used by the game. Bases words on the length of the word set by user in settings.
 
 ### Controller classes
-Class GameViewController
-- startGame(), returns setup for a new game
-- processGuess(), processes a guessed letter by the user and updates a word list
-- updateDrawing(), updates the drawing of hangman based on guesses
-- updateWord(), updates the wordview based on guesses
-- updateLetters(), updates the view showing the used letters
+#### Class GameController
+- startGame method, returns setup for a new game
+- processGuess method, processes a guessed letter by the user and updates a word list
+  - updateDrawing method, updates the drawing of hangman based on guesses
+  - updateWord method, updates the wordview based on guesses
+  - updateLetters method, updates the view showing the used letters
 
-Class SettingsViewController
-- setWordLength()
-- setGuessesAmount()
+#### Class GameViewController
+NewGame Button
+- Invokes startGame method to start a new game.
 
-### View classes
-Class InputLetterView
+InputLetter Button
 - Shows a list of letters that can be tapped on for a guess. Used letters will be grayed out.
 
-Class HangmanDrawingView
+HangmanDrawing
 - Shows a drawing of hangman. At each wrong guess a new part will be drawn. When all guesses have been used, the drawing is complete.
 
-Class GuessView
+Guess Label
 - Shows the amount of guesses left for the user.
 
-Class WordView
+Word Label
 - Shows and underscore for each unguessed letter of the word. Shows the letters for correct guesses.
+
+#### Class SettingsViewController
+WordLength Slider
+- Slider to set the length of the word to be guessed
+- setWordLength method, sets the length of the word to be guessed in NSUserDefaults
+
+GuessesAmount Slider
+- Slider to set the amount of guesses the user has
+- setGuessesAmount method, sets the amount of guesses the user has in NSUserDefaults
 
 ## Sketches
 ![Sketch](https://raw.githubusercontent.com/Jesse-B/appstudio-evilhangman/master/doc/sketch.png "Sketch")
 
 ## API's and frameworks
+Standard Xcode API's and frameworks.
 
 ## Database tables and fields
+NSUserDefaults can be seen as a database for game settings.

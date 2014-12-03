@@ -18,6 +18,16 @@
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *numGuessesLabel;
+@property (weak, nonatomic) IBOutlet UISlider *numGuessesSlider;
+- (IBAction)numGuessesChanged:(UISlider *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *wordLengthLabel;
+@property (weak, nonatomic) IBOutlet UISlider *wordLengthSlider;
+- (IBAction)wordLengthChanged:(UISlider *)sender;
+
+@property NSUserDefaults *UserSettings;
+
 - (IBAction)done:(id)sender;
 
 @end

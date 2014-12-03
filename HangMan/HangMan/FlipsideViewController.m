@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    // TODO: Maximale woordlengte bepalen
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,4 +38,11 @@
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
+
+- (IBAction)numGuessesChanged:(UISlider *)sender {
+    self.numGuessesLabel.text = [NSString stringWithFormat:@"Number of guesses: %d", (int)sender.value];
+}
+- (IBAction)wordLengthChanged:(UISlider *)sender {
+    self.wordLengthLabel.text = [NSString stringWithFormat:@"Word length: %d", (int)sender.value];
+}
 @end

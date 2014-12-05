@@ -27,8 +27,6 @@
 
 - (IBAction)wordLengthChanged:(UISlider *)sender;
 
-@property NSUserDefaults *UserSettings;
-
 - (IBAction)done:(id)sender;
 
 @end

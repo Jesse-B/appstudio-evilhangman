@@ -7,6 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
+#import "GameController.h"
 
 @interface FlipsideViewController ()
 
@@ -18,11 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-    // TODO: Maximale woordlengte bepalen
-    
+    GameController *game = [[GameController alloc] init];
+    NSNumber *maxLength = game.maxLength;
+    self.wordLengthSlider.maximumValue = [maxLength integerValue];
 }
 
 - (void)didReceiveMemoryWarning

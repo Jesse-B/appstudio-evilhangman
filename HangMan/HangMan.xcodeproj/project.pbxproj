@@ -23,6 +23,7 @@
 		A5C6FBB81A23370B004ED820 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C6FB971A23370B004ED820 /* UIKit.framework */; };
 		A5C6FBC01A23370B004ED820 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5C6FBBE1A23370B004ED820 /* InfoPlist.strings */; };
 		A5C6FBC21A23370B004ED820 /* HangManTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C6FBC11A23370B004ED820 /* HangManTests.m */; };
+		A5CE6B631A320F5E002F9A77 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6B621A320F5E002F9A77 /* GameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		A5C6FBBD1A23370B004ED820 /* HangManTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HangManTests-Info.plist"; sourceTree = "<group>"; };
 		A5C6FBBF1A23370B004ED820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5C6FBC11A23370B004ED820 /* HangManTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HangManTests.m; sourceTree = "<group>"; };
+		A5CE6B611A320F5E002F9A77 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		A5CE6B621A320F5E002F9A77 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				A5C6FBA31A23370B004ED820 /* AppDelegate.m */,
 				A5C6FBA51A23370B004ED820 /* Main.storyboard */,
 				A5C6FBA81A23370B004ED820 /* MainViewController.h */,
+				A5CE6B611A320F5E002F9A77 /* GameController.h */,
+				A5CE6B621A320F5E002F9A77 /* GameController.m */,
 				A5C6FBA91A23370B004ED820 /* MainViewController.m */,
 				A5C6FBAB1A23370B004ED820 /* FlipsideViewController.h */,
 				A5C6FBAC1A23370B004ED820 /* FlipsideViewController.m */,
@@ -133,8 +138,8 @@
 		A5C6FB9A1A23370B004ED820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A5145F271A24FF6D0096634E /* words.plist */,
 				A5C6FB9B1A23370B004ED820 /* HangMan-Info.plist */,
+				A5145F271A24FF6D0096634E /* words.plist */,
 				A5C6FB9C1A23370B004ED820 /* InfoPlist.strings */,
 				A5C6FB9F1A23370B004ED820 /* main.m */,
 				A5C6FBA11A23370B004ED820 /* HangMan-Prefix.pch */,
@@ -261,6 +266,7 @@
 				A5C6FBA41A23370B004ED820 /* AppDelegate.m in Sources */,
 				A5C6FBAA1A23370B004ED820 /* MainViewController.m in Sources */,
 				A5C6FBAD1A23370B004ED820 /* FlipsideViewController.m in Sources */,
+				A5CE6B631A320F5E002F9A77 /* GameController.m in Sources */,
 				A5C6FBA01A23370B004ED820 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

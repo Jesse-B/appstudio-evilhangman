@@ -24,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *wordLengthLabel;
 @property (weak, nonatomic) IBOutlet UISlider *wordLengthSlider;
+
 - (IBAction)wordLengthChanged:(UISlider *)sender;
 
 @property NSUserDefaults *UserSettings;

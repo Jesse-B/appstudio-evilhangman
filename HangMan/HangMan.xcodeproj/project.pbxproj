@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5145F281A24FF6D0096634E /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5145F271A24FF6D0096634E /* words.plist */; };
+		A54459891A34C340000E00ED /* WordsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54459881A34C340000E00ED /* WordsController.m */; };
 		A5C6FB941A23370B004ED820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C6FB931A23370B004ED820 /* Foundation.framework */; };
 		A5C6FB961A23370B004ED820 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C6FB951A23370B004ED820 /* CoreGraphics.framework */; };
 		A5C6FB981A23370B004ED820 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C6FB971A23370B004ED820 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		A5145F271A24FF6D0096634E /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
+		A54459871A34C340000E00ED /* WordsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsController.h; sourceTree = "<group>"; };
+		A54459881A34C340000E00ED /* WordsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsController.m; sourceTree = "<group>"; };
 		A5C6FB901A23370B004ED820 /* HangMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C6FB931A23370B004ED820 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5C6FB951A23370B004ED820 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				A5C6FBA91A23370B004ED820 /* MainViewController.m */,
 				A5CE6B611A320F5E002F9A77 /* GameController.h */,
 				A5CE6B621A320F5E002F9A77 /* GameController.m */,
+				A54459871A34C340000E00ED /* WordsController.h */,
+				A54459881A34C340000E00ED /* WordsController.m */,
 				A5C6FBAB1A23370B004ED820 /* FlipsideViewController.h */,
 				A5C6FBAC1A23370B004ED820 /* FlipsideViewController.m */,
 				A5C6FBAE1A23370B004ED820 /* Images.xcassets */,
@@ -268,6 +273,7 @@
 				A5C6FBAD1A23370B004ED820 /* FlipsideViewController.m in Sources */,
 				A5CE6B631A320F5E002F9A77 /* GameController.m in Sources */,
 				A5C6FBA01A23370B004ED820 /* main.m in Sources */,
+				A54459891A34C340000E00ED /* WordsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

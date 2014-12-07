@@ -9,14 +9,11 @@
 #import "GameController.h"
 
 @implementation GameController
--(id)init{
+-(id)initWithWordLength:(int)wordLength withNumGuesses:(int)numGuesses{
     self = [super init];
-    // Load words from words.plist into array
-    self.words = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"words" ofType:@"plist"]];
-    // Calculate length of longest word     
-    self.maxLength = [self.words valueForKeyPath: @"@max.length"];
-
+    self.guessesLeft = &(numGuesses);
+    
+    
     return self;
 }
-
 @end

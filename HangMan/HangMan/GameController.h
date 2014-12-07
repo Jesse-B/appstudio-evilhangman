@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface GameController : NSObject
-@property NSMutableArray *words;
-@property NSNumber *maxLength;
-
+@property int *guessesLeft;
+-(id)initWithWordLength:(int)wordLength withNumGuesses:(int)numGuesses;
 @end

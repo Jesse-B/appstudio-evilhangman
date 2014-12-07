@@ -7,7 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
-#import "GameController.h"
+#import "WordsController.h"
 
 @interface FlipsideViewController ()
 
@@ -20,26 +20,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Set max value on slider for word length
-    GameController *game = [[GameController alloc] init];
-    NSNumber *maxLength = game.maxLength;
+    WordsController *words = [[WordsController alloc] init];
+    NSNumber *maxLength = words.maxLength;
     self.wordLengthSlider.maximumValue = [maxLength integerValue];
     // Set saved user settings on sliders and labels
-    //self.userSettings = [NSUserDefaults standardUserDefaults];
     int numGuesses = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"numGuesses"];
-    // If not yet saved, set it to default 5
-    if (numGuesses == 0){
-        numGuesses = 5;
-        [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"numGuesses"];
-    }
     self.numGuessesLabel.text = [NSString stringWithFormat:@"Number of guesses: %d", numGuesses];
     self.numGuessesSlider.value = numGuesses;
     int wordLength = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"wordLength"];
-    // If not yet saved, set it to default 5
-    if (wordLength == 0){
-        wordLength = 5;
-        [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"wordLength"];
-    }
-
     self.wordLengthLabel.text = [NSString stringWithFormat:@"Word length: %d", wordLength];
     self.wordLengthSlider.value = wordLength;
 }

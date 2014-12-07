@@ -10,4 +10,7 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *numGuessesLeftLabel;
+
+- (IBAction)newGameButtonPressed:(id)sender;
 @end

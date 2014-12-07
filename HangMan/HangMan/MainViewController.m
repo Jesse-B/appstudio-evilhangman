@@ -40,4 +40,11 @@
     }
 }
 
+- (void)startNewGame:(int)wordLength :(int)numGuesses {
+    self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", numGuesses];
+}
+
+- (IBAction)newGameButtonPressed:(id)sender {
+    [self startNewGame:[[NSUserDefaults standardUserDefaults] integerForKey:@"wordLength"] :[[NSUserDefaults standardUserDefaults] integerForKey:@"numGuesses"]];
+}
 @end

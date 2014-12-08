@@ -14,6 +14,7 @@
 @end
 
 @implementation MainViewController
+@synthesize textField = _textField;
 
 - (void)viewDidLoad
 {
@@ -32,6 +33,9 @@
         [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"wordLength"];
     }
     [self startNewGamewithWordLength:wordLength withNumGuesses:numGuesses];
+    self.textField.delegate = self;
+    self.textField.hidden = YES;
+    [self.textField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +49,7 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.textField becomeFirstResponder];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -62,5 +67,11 @@
 
 - (IBAction)newGameButtonPressed:(id)sender {
     [self startNewGamewithWordLength:[[NSUserDefaults standardUserDefaults] integerForKey:@"wordLength"] withNumGuesses:[[NSUserDefaults standardUserDefaults] integerForKey:@"numGuesses"]];
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSLog(@"!!");
+    return YES;
 }
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "FlipsideViewController.h"
+#import "GameController.h"
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UITextFieldDelegate>
 
-@property NSObject *game;
+@property GameController *game;
 
 @property (weak, nonatomic) IBOutlet UILabel *numGuessesLeftLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;

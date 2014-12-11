@@ -71,7 +71,10 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSLog(@"!!");
+    if ([self.game isLetterValid:string]) {
+        NSLog(@"!!%@", string);
+//        [self.game submitLetter:string];
+    }
     return YES;
 }
 @end

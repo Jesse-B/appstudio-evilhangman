@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface GameController : NSObject
-@property int *guessesLeft;
+@property NSInteger guessesLeft;
+@property NSMutableArray *usedLetters;
+@property NSMutableArray *wordsWithLength;
+
+
 -(id)initWithWordLength:(int)wordLength withNumGuesses:(int)numGuesses;
+-(BOOL)isLetterValid:(NSString *) letter;
+-(void)submitLetter:(NSString *) letter;
 @end

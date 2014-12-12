@@ -62,7 +62,10 @@
 - (void)startNewGamewithWordLength:(int)wordLength withNumGuesses:(int)numGuesses {
     GameController *game = [[GameController alloc] initWithWordLength:wordLength withNumGuesses:numGuesses];
     self.game = game;
+    // Set number of guesses label
     self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", numGuesses];
+    // Set wordToGuess label
+    self.wordToGuessLabel.text = [@"" stringByPaddingToLength:wordLength withString: @"-" startingAtIndex:0];
 }
 
 - (IBAction)newGameButtonPressed:(id)sender {
@@ -71,10 +74,20 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if ([self.game isLetterValid:string]) {
-        NSLog(@"!!%@", string);
-//        [self.game submitLetter:string];
+    // To uppercase
+    NSString *letter = [string uppercaseString];
+    // Check if letter is valid
+    if ([self.game isLetterValid:letter]) {
+        NSLog(@"!!%@", letter);
+        // update words
+        [self.game updateWordsForLetter:string];
+        // update wordToGuessLabel
+        [self updateWordToGuessLabel];
     }
     return YES;
+}
+
+-(void) updateWordToGuessLabel{
+    
 }
 @end

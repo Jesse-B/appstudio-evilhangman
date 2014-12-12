@@ -10,11 +10,12 @@
 
 @interface GameController : NSObject
 @property NSInteger guessesLeft;
+@property NSInteger wordLength;
 @property NSMutableArray *usedLetters;
 @property NSMutableArray *wordsWithLength;
 
 
 -(id)initWithWordLength:(int)wordLength withNumGuesses:(int)numGuesses;
 -(BOOL)isLetterValid:(NSString *) letter;
--(void)submitLetter:(NSString *) letter;
+-(void)updateWordsForLetter:(NSString *) letter;
 @end

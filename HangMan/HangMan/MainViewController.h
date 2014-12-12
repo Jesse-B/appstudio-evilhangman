@@ -14,6 +14,7 @@
 @property GameController *game;
 
 @property (weak, nonatomic) IBOutlet UILabel *numGuessesLeftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wordToGuessLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 - (IBAction)newGameButtonPressed:(id)sender;

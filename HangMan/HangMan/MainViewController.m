@@ -68,6 +68,8 @@
     self.wordToGuessLabel.text = [@"" stringByPaddingToLength:wordLength withString: @"-" startingAtIndex:0];
     // (Re)set result label
     self.resultLabel.text = @"";
+    // (Re)set usedLetters label
+    self.usedLettersLabel.text = @"";
 }
 
 - (IBAction)newGameButtonPressed:(id)sender {
@@ -92,6 +94,9 @@
         }
         int newGuessesLeft = self.game.guessesLeft;
         self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", newGuessesLeft];
+        // Update used letters label
+        NSString *usedLettersAsString = [[self.game.usedLetters valueForKey:@"description"] componentsJoinedByString:@" "];
+        self.usedLettersLabel.text = usedLettersAsString;
         // Check win or loss
         // Win if all letters guessed
         BOOL win = [self.wordToGuessLabel.text rangeOfString:@"-"].location == NSNotFound;

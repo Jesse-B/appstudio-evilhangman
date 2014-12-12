@@ -89,13 +89,16 @@
         // Check win or loss
         // Win if all letters guessed
         BOOL win = [self.wordToGuessLabel.text rangeOfString:@"-"].location == NSNotFound;
-        NSLog(@"%hhd", win);
         BOOL loss = self.game.guessesLeft == 0;
         if(win){
             self.resultLabel.text = @"YOU WIN!";
+            // Set all letters used so no more letters can be played
+            self.game.usedLetters = [@[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z",] mutableCopy];
         }
         else if (loss){
             self.resultLabel.text = @"YOU LOSE!";
+            // Set all letters used so no more letters can be played
+            self.game.usedLetters = [@[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z",] mutableCopy];
         }
     }
     return YES;

@@ -66,6 +66,8 @@
     self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", numGuesses];
     // Set wordToGuess label
     self.wordToGuessLabel.text = [@"" stringByPaddingToLength:wordLength withString: @"-" startingAtIndex:0];
+    // (Re)set result label
+    self.resultLabel.text = @"";
 }
 
 - (IBAction)newGameButtonPressed:(id)sender {
@@ -81,9 +83,13 @@
         // update words
         [self.game updateWordsForLetter:letter];
         // update wordToGuessLabel
+        int oldNumLettersToGuess = [[self.wordToGuessLabel.text componentsSeparatedByString:@"-"] count] - 1;
         [self updateWordToGuessLabel];
+        int newNumLettersToGuess = [[self.wordToGuessLabel.text componentsSeparatedByString:@"-"] count] - 1;
         // update guessesLeftLabel
-        self.game.guessesLeft = self.game.guessesLeft - 1;
+        if (oldNumLettersToGuess == newNumLettersToGuess){
+            self.game.guessesLeft = self.game.guessesLeft - 1;
+        }
         int newGuessesLeft = self.game.guessesLeft;
         self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", newGuessesLeft];
         // Check win or loss

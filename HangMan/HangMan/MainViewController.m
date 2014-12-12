@@ -87,7 +87,16 @@
         int newGuessesLeft = self.game.guessesLeft;
         self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", newGuessesLeft];
         // Check win or loss
-        [self.game winOrLossCheck];
+        // Win if all letters guessed
+        BOOL win = [self.wordToGuessLabel.text rangeOfString:@"-"].location == NSNotFound;
+        NSLog(@"%hhd", win);
+        BOOL loss = self.game.guessesLeft == 0;
+        if(win){
+            self.resultLabel.text = @"YOU WIN!";
+        }
+        else if (loss){
+            self.resultLabel.text = @"YOU LOSE!";
+        }
     }
     return YES;
 }

@@ -18,5 +18,4 @@
 -(id)initWithWordLength:(int)wordLength withNumGuesses:(int)numGuesses;
 -(BOOL)isLetterValid:(NSString *) letter;
 -(void)updateWordsForLetter:(NSString *) letter;
--(void)winOrLossCheck;
 @end

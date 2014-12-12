@@ -47,7 +47,8 @@
         NSMutableString *equivalenceClass = [[NSMutableString alloc] init];
         for(int i = 0; i < word.length; i++){
             NSString * lttr = [word substringWithRange:NSMakeRange(i, 1)];
-            if (letter == lttr){
+            if ([letter isEqualToString:lttr]){
+                NSLog(@"%@, %@", letter, lttr);
                 [equivalenceClass appendString:lttr];
             }
             else{
@@ -72,6 +73,7 @@
     for (id key in equivalenceClasses) {
         NSMutableArray *classWords = [equivalenceClasses objectForKey:key];
         int count = classWords.count;
+        NSLog(@"%@: %d", key, count);
         if (count > largestClassCount){
             largestClassCount = count;
             largestClassWords = classWords;
@@ -79,5 +81,9 @@
     }
     // update words
     self.wordsWithLength = largestClassWords;
+}
+
+-(void)winOrLossCheck {
+    
 }
 @end

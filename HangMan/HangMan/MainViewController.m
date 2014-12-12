@@ -78,16 +78,34 @@
     NSString *letter = [string uppercaseString];
     // Check if letter is valid
     if ([self.game isLetterValid:letter]) {
-        NSLog(@"!!%@", letter);
         // update words
-        [self.game updateWordsForLetter:string];
+        [self.game updateWordsForLetter:letter];
         // update wordToGuessLabel
         [self updateWordToGuessLabel];
+        // update guessesLeftLabel
+        self.game.guessesLeft = self.game.guessesLeft - 1;
+        int newGuessesLeft = self.game.guessesLeft;
+        self.numGuessesLeftLabel.text = [NSString stringWithFormat:@"%d", newGuessesLeft];
+        // Check win or loss
+        [self.game winOrLossCheck];
     }
     return YES;
 }
 
 -(void) updateWordToGuessLabel{
-    
+    NSMutableString *revealedLetters = [[NSMutableString alloc] init];
+    // Check which used letters are in an example word of the remaining possible words
+    NSString *exampleWord = [self.game.wordsWithLength objectAtIndex:0];
+    for(int i = 0; i < exampleWord.length; i++){
+        NSString * letter = [exampleWord substringWithRange:NSMakeRange(i, 1)];
+        if ([self.game.usedLetters containsObject:letter]){
+            [revealedLetters appendString:letter];
+        }
+        else{
+            [revealedLetters appendString:@"-"];
+        }
+
+    }
+    self.wordToGuessLabel.text = revealedLetters;
 }
 @end
